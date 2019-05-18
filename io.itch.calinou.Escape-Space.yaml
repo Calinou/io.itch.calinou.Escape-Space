@@ -1,0 +1,47 @@
+app-id: io.itch.calinou.Escape-Space
+base: org.godotengine.godot.BaseApp
+base-version: stable
+runtime: org.freedesktop.Platform
+runtime-version: "18.08"
+default-branch: stable
+sdk: org.freedesktop.Sdk
+command: escape-space
+
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --share=network
+  - --socket=pulseaudio
+  - --filesystem=host
+  - --device=all
+
+modules:
+  - name: escape-space
+    buildsystem: simple
+
+    sources:
+      - type: archive
+        sha256: d8c489ff62663100084fbf3f716e11ff2b8e48568ac205ac7f9fcd80d10416bf
+        url: https://github.com/Calinou/escape-space/releases/download/v1.2.0/escape-space-1.2.0-linux-x86_64.tar.xz
+
+      - type: script
+        dest-filename: escape-space.sh
+        commands:
+          - /app/bin/godot-runner --main-pack /app/bin/escape-space.pck "$@"
+
+      - type: file
+        sha256: 0e182feea3440987622bdda3690d23cb2c32446ee5d3147d14675114830151f5
+        url: https://github.com/Calinou/escape-space/raw/master/icon.png
+
+      - type: file
+        path: io.itch.calinou.Escape-Space.desktop
+
+      - type: file
+        path: io.itch.calinou.Escape-Space.appdata.xml
+
+    build-commands:
+      - install -Dm755 escape-space.sh /app/bin/escape-space
+      - install -Dm755 escape-space.pck -t /app/bin/
+      - install -Dm644 icon.png /app/share/icons/hicolor/256x256/apps/io.itch.calinou.Escape-Space.png
+      - install -Dm644 io.itch.calinou.Escape-Space.desktop -t /app/share/applications/
+      - install -Dm644 io.itch.calinou.Escape-Space.appdata.xml -t /app/share/appdata/

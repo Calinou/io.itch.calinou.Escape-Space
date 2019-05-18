@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Escape Space
+GenericName=2D puzzle game
+Comment=2D puzzle game
+Exec=escape-space
+Icon=io.itch.calinou.Escape-Space
+Terminal=false
+Type=Application
+Categories=Game;

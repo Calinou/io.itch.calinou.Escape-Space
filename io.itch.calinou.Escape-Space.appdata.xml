@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>io.itch.calinou.Escape-Space</id>
+  <name>Escape Space</name>
+  <summary>2D puzzle game</summary>
+  <description>
+    <p>Escape Space is a 2D puzzle game.</p>
+  </description>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <url type="homepage">https://calinou.itch.io/escape-space/</url>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="1.2.0" date="2019-03-02"/>
+  </releases>
+</component>
