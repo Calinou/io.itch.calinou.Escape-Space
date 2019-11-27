@@ -2,7 +2,7 @@ app-id: io.itch.calinou.Escape-Space
 base: org.godotengine.godot.BaseApp
 base-version: stable
 runtime: org.freedesktop.Platform
-runtime-version: "18.08"
+runtime-version: "19.08"
 default-branch: stable
 sdk: org.freedesktop.Sdk
 command: escape-space
